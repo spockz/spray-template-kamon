@@ -1,0 +1,37 @@
+<!DOCTYPE aspectj PUBLIC "-//AspectJ//DTD//EN" "http://www.eclipse.org/aspectj/dtd/aspectj.dtd">
+
+<aspectj>
+    <aspects>
+        <!-- Actors -->
+        <aspect name="akka.instrumentation.RepointableActorRefTraceContextMixin"/>
+        <aspect name="akka.instrumentation.SystemMessageTraceContextMixin"/>
+        <aspect name="akka.instrumentation.ActorSystemMessagePassingTracing"/>
+        <aspect name="akka.instrumentation.EnvelopeTraceContextMixin"/>
+        <aspect name="akka.instrumentation.BehaviourInvokeTracing"/>
+        <aspect name="kamon.instrumentation.ActorLoggingTracing"/>
+
+        <!-- Futures -->
+        <aspect name="kamon.instrumentation.FutureTracing"/>
+
+        <!-- Patterns -->
+        <aspect name="akka.instrumentation.AskPatternTracing"/>
+
+        <!-- Spray Server -->
+        <aspect name="spray.can.server.ServerRequestInstrumentation"/>
+
+        <!-- Spray Client -->
+        <aspect name="spray.can.client.ClientRequestInstrumentation"/>
+
+        <!-- TestKit -->
+        <aspect name="akka.testkit.TestProbeInstrumentation"/>
+
+    </aspects>
+
+    <weaver options="-verbose -showWeaveInfo">
+        <include within="scala.concurrent..*"/>
+        <include within="akka..*"/>
+        <include within="spray..*"/>
+        <include within="kamon..*"/>
+    </weaver>
+
+</aspectj>
