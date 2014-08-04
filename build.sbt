@@ -19,9 +19,9 @@ libraryDependencies ++= {
     "com.typesafe.akka"   %%  "akka-actor"    % akkaV,
     "com.typesafe.akka"   %%  "akka-testkit"  % akkaV % "test",
     "org.specs2"          %%  "specs2"        % "2.2.3" % "test",
-    "io.kamon" %% "kamon-core" % "0.3.2"
-//    "io.kamon" %% "kamon-spray" % "0.3.2"
-//    "io.kamon" %% "kamon-statsd" % "0.3.2"
+    "io.kamon" %% "kamon-core" % "0.3.2",
+    "io.kamon" %% "kamon-spray" % "0.3.2",
+    "io.kamon" %% "kamon-statsd" % "0.3.2"
   )
 }
 
